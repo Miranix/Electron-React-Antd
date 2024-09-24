@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, Tray, nativeImage, shell, protocol, dialog, Menu } = require("electron");
 const path = require("node:path");
-const { fs } = require('fs')
-const {name}=require('../package.json')
+const fs = require('fs')
+const {AppName}=require(path.join(app.getAppPath(), 'package.json'));
 
 const docP = app.getPath('documents')
 
@@ -9,7 +9,7 @@ const docP = app.getPath('documents')
 let mainWindow;
 const icon = nativeImage.createFromPath(path.resolve(__dirname, "./logo.png"));
 const createWindow = () => {
-  // 创建主窗口
+  // Create main window
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
@@ -31,7 +31,7 @@ const createWindow = () => {
   }
   mainWindow.setMenu(null);
 
-  // 创建托盘图标
+  // Create tray icon
   tray = new Tray(icon);
   tray.on("click", () => {
     try {
@@ -62,8 +62,8 @@ app.whenReady().then(() => {
   createWindow();
 });
 
-// 单程序锁
-const additionalData = { myKey: `${name}-lock` }
+// Single instance lock
+const additionalData = { myKey: `${AppName}-lock` }
 const gotTheLock = app.requestSingleInstanceLock(additionalData)
 
 if (!gotTheLock) {

@@ -1,5 +1,6 @@
 {
-  "name": "{{name}}",
+  "name": "electron-main",
+  "AppName":"{{name}}",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -36,8 +37,5 @@
       "perMachine": true,
       "allowToChangeInstallationDirectory": true
     }
-  },
-  "dependencies": {
-    "jsonwebtoken": "9.0.2"
   }
 }

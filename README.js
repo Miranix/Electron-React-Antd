@@ -1,21 +1,21 @@
-const 文件说明 = {
-    'electron-main': { // 主进程目录
-        render:主进程打包目录,
-        'index.js': 主进程入口文件,
-        'logo.png': 项目logo,
-        'preload.js': 主进程预加载文件,
+const fileDescription = {
+    'electron-main': { // Main process directory
+        render: 'Main process output directory',
+        'index.js': 'Main process entry file',
+        'logo.png': 'Project logo',
+        'preload.js': 'Main process preload file',
     },
-    'electron-renderer': { // 渲染进程目录
-        model: { // 数据模型  
+    'electron-renderer': { // Renderer process directory
+        model: { // Data model  
         },
-        src: { // 业务代码
-            common: { // 公共方法
+        src: { // Business logic
+            common: { // Common methods
             },
-            components: { // 公共组件
+            components: { // Shared components
             },
-            views: { // 页面
+            views: { // Pages
             },
         }
     },
-    scripts: 脚手架
+    scripts: 'Scaffolding'
 }
